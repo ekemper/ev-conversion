@@ -1,29 +1,27 @@
 
 
-class VehicleDynamics {
+export default class VehicleDynamics {
     constructor() {
-
+        this.g = 9.81 // m/s^2
     }
 
     acceleration(mass, tractiveForce, dragForce, gradeForce, rollingForce) {
-        return (1/mass) * (tractiveForce - dragForce - gradeForce - rollingForce)
+        return (1 / mass) * (tractiveForce - dragForce - gradeForce - rollingForce)
     }
 
-    dragForce(airDensity, frontArea, dragCoefficient, vehicleSpeed, windSpeed ) {
+    dragForce(airDensity, frontArea, dragCoefficient, vehicleSpeed, windSpeed) {
         // wind speed is assumed to be in the same or opposite to vehicle speed
 
-        return .5 * airDensity * frontArea * dragCoefficient * (vehicleSpeed - windSpeed)^2
+        return .5 * airDensity * frontArea * dragCoefficient * (vehicleSpeed - windSpeed) ^ 2
     }
 
-    gradeForce(mass, roadAngle) {
-        const g = 9.81 // m/s^2
-        return mass * g * Math.sin(roadAngle)
-    }       
+    gradeForce(mass, roadAngleRadians) {
+        return mass * this.g * Math.sin(roadAngleRadians)
+    }
 
-    // TODO : come back to the rolling force calculation
-    // rollingForce(normalForce, rollingResistanceCoefficient) {
-    //     return normalForce * rollingResistanceCoefficient * Math.cos(theta)
-    // }
+    rollingForce(mass, rollingResistanceCoefficient, roadAngleRadians) {
+        return mass * this.g * rollingResistanceCoefficient * Math.cos(roadAngleRadians)
+    }
 
     /*
 
