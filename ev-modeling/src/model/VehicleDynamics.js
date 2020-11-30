@@ -34,16 +34,8 @@ export default class VehicleDynamics {
         return mass * this.g * rollingResistanceCoefficient * Math.cos(roadAngleRadians)
     }
 
-    /*
-
-    the total tractive force is the sum of the rear and front ractive forces
-
-        tractiveForce = frontTractiveForce + rearTractiveForce
-
-    where the front and rear tractive forces are expressed as a function of the friction coef and the normal forces
-
-        frontTractiveForce = frontFrictionCoef * frontNormalForce
-        rearTractiveForce = rearFrictionCoef * rearNormalForce
-
-    */
-}
+    // https://x-engineer.org/automotive-engineering/chassis/vehicle-dynamics/calculate-wheel-torque-engine/
+    tractiveForce(engineTorque, wheelRadius, transmissionGearRatio, differentialGearRatio) {
+        return ( engineTorque * transmissionGearRatio * differentialGearRatio ) / wheelRadius
+    }
+ }
