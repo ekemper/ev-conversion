@@ -35,7 +35,11 @@ export default class VehicleDynamics {
     }
 
     // https://x-engineer.org/automotive-engineering/chassis/vehicle-dynamics/calculate-wheel-torque-engine/
-    tractiveForce(engineTorque, wheelRadius, transmissionGearRatio, differentialGearRatio) {
-        return ( engineTorque * transmissionGearRatio * differentialGearRatio ) / wheelRadius
+    tractiveForce(
+        engineTorqueNm, 
+        wheelRadius, 
+        transmissionGearRatio, 
+        differentialGearRatio) {
+        return ( engineTorqueNm * transmissionGearRatio * differentialGearRatio ) / wheelRadius
     }
  }

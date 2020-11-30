@@ -5,7 +5,8 @@ import _ from  "lodash"
 const GMAPS_API_KEY = 'AIzaSyAdNXQ6jnq1TutoOh_0gOBLsSQRP2HIwqE'
 const mapStyles = {
   width: '100%',
-  height: '600px'
+  height: '600px',
+  position: 'relative'
 };
 
 export class MapContainer extends Component {

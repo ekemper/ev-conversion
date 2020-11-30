@@ -1,19 +1,25 @@
 // import logo from './logo.svg';
-import Map from './Map'
+// import Map from './Map'
 import './App.css';
-import EnergyConsumptionModel from './model/EnergyConsumptionModel'
-const consumptionModel = new EnergyConsumptionModel()
+// import EnergyConsumptionModel from './model/EnergyConsumptionModel'
+import ZeroToSixty from './model/ZeroToSixty'
+
+// const consumptionModel = new EnergyConsumptionModel()
+const model = new ZeroToSixty()
+
 function App() {
   return (
     <div className="App">
 
-      <Map drivingRoute={consumptionModel.drivingRoute}></Map>
+      <pre>{JSON.stringify(model.in(), null, 4)}</pre>
 
-      <h3>Total Energy Consumed For Route:</h3>
+      {/* <Map drivingRoute={consumptionModel.drivingRoute}></Map> */}
+
+      {/* <h3>Total Energy Consumed For Route:</h3>
       <pre>{JSON.stringify(consumptionModel.EnergyConsumedForRouteJoules, null, 4)} joules</pre>
       <pre>{JSON.stringify(consumptionModel.EnergyConsumedForRouteKWh, null, 4)} KWh</pre>
       <h3>Energy Per Segment:</h3>
-      <pre>{JSON.stringify(consumptionModel.drivingRoute, null, 4)}</pre>
+      <pre>{JSON.stringify(consumptionModel.drivingRoute, null, 4)}</pre> */}
 
     </div>
   );
