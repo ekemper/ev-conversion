@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Polyline } from 'google-maps-react';
 import _ from  "lodash"
 
-const GMAPS_API_KEY = 'AIzaSyAdNXQ6jnq1TutoOh_0gOBLsSQRP2HIwqE'
+const GMAPS_API_KEY = 'noodles'
 const mapStyles = {
   width: '100%',
   height: '600px',
